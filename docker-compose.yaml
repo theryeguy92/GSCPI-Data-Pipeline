@@ -39,23 +39,24 @@ services:
       - supply_chain_net
 
   db_dashboard:
-    image: python:3.8
-    container_name: db_dashboard
-    volumes:
-      - ./scripts/dashboard.py:/app/dashboard.py
-    networks:
-      - supply_chain_net
-    command: python /app/dashboard.py
-    ports:
-      - "27017:27017"
-      - "5000:5000"
-    environment:
-      - FLASK_APP=dashboard.py
-    depends_on:
-      - kafka_broker
     build:
       context: .
       dockerfile: Dockerfiles/db_dashboard.Dockerfile
+    container_name: db_dashboard
+    volumes:
+      - ./scripts:/app/scripts  # Ensure access to dashboard.py
+      - ./scripts/templates:/app/templates  # For HTML templates
+      - ./scripts/static:/app/static  # For CSS and JS assets
+    networks:
+      - supply_chain_net
+    command: python /app/scripts/dashboard.py
+    ports:
+      - "5000:5000"
+    depends_on:
+      - kafka_broker
+      - zookeeper
+      - data_ingestion
+      - ml_forecasting
 
 networks:
   supply_chain_net:

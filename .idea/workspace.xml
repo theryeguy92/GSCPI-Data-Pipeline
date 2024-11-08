@@ -5,14 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd12fe71-6dd4-4fae-8f5b-8b81fa7e2544" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfiles/db_dashboard.Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/wait-for-it.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/static/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfiles/data_ingestion.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfiles/data_ingestion.Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfiles/ml_forecasting.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfiles/ml_forecasting.Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/data_ingestion.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/data_ingestion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/forecast_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/forecast_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/dashboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/dashboard.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,7 @@
       <list>
         <option value="Dockerfile" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -62,10 +61,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
     "Docker.docker-compose.yaml.db_dashboard: Compose Deployment.executor": "Run",
     "Python.data_ingestion.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "dashboard",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -125,7 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731072444272</updated>
       <workItem from="1731072445379" duration="275000" />
-      <workItem from="1731072727876" duration="3827000" />
+      <workItem from="1731072727876" duration="5287000" />
     </task>
     <servers />
   </component>

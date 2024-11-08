@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Supply Chain Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+<header>
+    <h1>Supply Chain Dashboard</h1>
+</header>
+<main>
+    <section id="data-table">
+        <h2>Data Overview</h2>
+        <table>
+            <!-- Table rows will be dynamically added here if needed -->
+        </table>
+    </section>
+    <section id="charts">
+        <h2>GSCPI Trend</h2>
+        <div id="gscpi-chart"></div>
+    </section>
+</main>
+<footer>© 2024 Supply Chain Inc.</footer>
+</body>
+</html>
