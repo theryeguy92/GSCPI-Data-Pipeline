@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd12fe71-6dd4-4fae-8f5b-8b81fa7e2544" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfiles/data_ingestion.Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Dockerfiles/ml_forecasting.Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/dashboard.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/data_ingestion.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/forecast_model.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/supply_chain_data_pipeline_project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfiles/db_dashboard.Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wait-for-it.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfiles/data_ingestion.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfiles/data_ingestion.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfiles/ml_forecasting.Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfiles/ml_forecasting.Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/data_ingestion.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/data_ingestion.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/forecast_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/forecast_model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +41,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="rbapof4u" />
   </component>
@@ -61,6 +62,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Docker.docker-compose.yaml.db_dashboard: Compose Deployment.executor": "Run",
+    "Python.data_ingestion.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -72,7 +75,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.3770115",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -80,6 +83,30 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Ryan Levey\supply_chain_pipeline\supply_chain_data_pipeline_project\scripts" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration name="docker-compose.yaml.db_dashboard: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="db_dashboard" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yaml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.docker-compose.yaml.db_dashboard: Compose Deployment" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -98,7 +125,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731072444272</updated>
       <workItem from="1731072445379" duration="275000" />
-      <workItem from="1731072727876" duration="1775000" />
+      <workItem from="1731072727876" duration="3827000" />
     </task>
     <servers />
   </component>
@@ -118,5 +145,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/supply_chain_data_pipeline_project$data_ingestion.coverage" NAME="data_ingestion Coverage Results" MODIFIED="1731074777705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scripts" />
   </component>
 </project>

@@ -22,7 +22,7 @@ def download_gscpi_data():
     return df
 
 # init Kafka Producer
-producer = KafkaProducer(boostrap_servers='kafka_broker:9092')
+producer = KafkaProducer(bootstrap_servers=['kafka_broker:9092'])
 
 # Download and process GSCPI data
 gscpi_data = download_gscpi_data()

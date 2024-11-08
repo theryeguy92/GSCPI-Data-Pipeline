@@ -5,13 +5,10 @@ services:
       context: .
       dockerfile: Dockerfiles/data_ingestion.Dockerfile
     container_name: data_ingestion
-    volumes:
-      - ./scripts/data_ingestion.py:/app/data_ingestion.py
     networks:
       - supply_chain_net
-    command: python /app/data_ingestion.py
 
-  kafka:
+  kafka_broker:
     image: bitnami/kafka:latest
     container_name: kafka_broker
     environment:
@@ -38,14 +35,11 @@ services:
       context: .
       dockerfile: Dockerfiles/ml_forecasting.Dockerfile
     container_name: ml_forecasting
-    volumes:
-      - ./scripts/forecast_model.py:/app/forecast_model.py
     networks:
       - supply_chain_net
-    command: python /app/forecast_model.py
 
   db_dashboard:
-    image: mongo:latest
+    image: python:3.8
     container_name: db_dashboard
     volumes:
       - ./scripts/dashboard.py:/app/dashboard.py
@@ -53,8 +47,15 @@ services:
       - supply_chain_net
     command: python /app/dashboard.py
     ports:
-      - "27017:27017"  # MongoDB database
-      - "5000:5000"    # Flask/Dash dashboard
+      - "27017:27017"
+      - "5000:5000"
+    environment:
+      - FLASK_APP=dashboard.py
+    depends_on:
+      - kafka_broker
+    build:
+      context: .
+      dockerfile: Dockerfiles/db_dashboard.Dockerfile
 
 networks:
   supply_chain_net:
