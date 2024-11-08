@@ -1,0 +1,61 @@
+version: '3'
+services:
+  data_ingestion:
+    build:
+      context: .
+      dockerfile: Dockerfiles/data_ingestion.Dockerfile
+    container_name: data_ingestion
+    volumes:
+      - ./scripts/data_ingestion.py:/app/data_ingestion.py
+    networks:
+      - supply_chain_net
+    command: python /app/data_ingestion.py
+
+  kafka:
+    image: bitnami/kafka:latest
+    container_name: kafka_broker
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - ALLOW_PLAINTEXT_LISTENER=yes
+    ports:
+      - "9092:9092"
+    networks:
+      - supply_chain_net
+
+  zookeeper:
+    image: bitnami/zookeeper:latest
+    container_name: zookeeper
+    environment:
+      - ALLOW_ANONYMOUS_LOGIN=yes
+    ports:
+      - "2181:2181"
+    networks:
+      - supply_chain_net
+
+  ml_forecasting:
+    build:
+      context: .
+      dockerfile: Dockerfiles/ml_forecasting.Dockerfile
+    container_name: ml_forecasting
+    volumes:
+      - ./scripts/forecast_model.py:/app/forecast_model.py
+    networks:
+      - supply_chain_net
+    command: python /app/forecast_model.py
+
+  db_dashboard:
+    image: mongo:latest
+    container_name: db_dashboard
+    volumes:
+      - ./scripts/dashboard.py:/app/dashboard.py
+    networks:
+      - supply_chain_net
+    command: python /app/dashboard.py
+    ports:
+      - "27017:27017"  # MongoDB database
+      - "5000:5000"    # Flask/Dash dashboard
+
+networks:
+  supply_chain_net:
+    driver: bridge
